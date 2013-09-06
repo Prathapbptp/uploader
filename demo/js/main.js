@@ -1,5 +1,9 @@
+/* global $, Uploader */
+
 (function() {
 	
+	'use strict';
+
 	var uploader = new Uploader(),
 
 		onThumbReady = function (thumb) {
@@ -35,8 +39,11 @@
 	uploader.bind('uploadSuccess', onUploadSuccess);
 	uploader.bind('uploadError', onUploadError);
 
-	uploader.init({
-		input: 'fileInput'
+	uploader.config({
+		input: 'fileInput',
+		thumbWidth: 150,
+		thumbHeight: 150,
+		url: 'upload.php'
 	});
 	
 }());
